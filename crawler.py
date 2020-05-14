@@ -286,7 +286,7 @@ def crawl_image_urls(keywords, engine="Google", max_number=10000,
             chrome_options.add_argument("headless")
         if proxy is not None and proxy_type is not None:
             chrome_options.add_argument("--proxy-server={}://{}".format(proxy_type, proxy))
-        driver = webdriver.Chrome(chrome_path, chrome_options=chrome_options)
+        driver = webdriver.Chrome(chrome_path, options=chrome_options)
     else:
         phantomjs_path = shutil.which("phantomjs")
         phantomjs_path = "./bin/phantomjs" if phantomjs_path is None else phantomjs_path
